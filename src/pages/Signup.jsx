@@ -16,7 +16,7 @@ const SignupFormValidation = () => {
       .required("Please enter you email")
       .email("enter a valid email"),
     password: yup.string().required("Please enter you password"),
-    gender: yup.string().required("please select you gender"),
+    gender: yup.string().required("Please select you gender"),
   });
 
   const handleSubmit = (values) => {
@@ -72,12 +72,14 @@ const SignupFormValidation = () => {
                   placeholder="Select you gender"
                   className="w-full rounded border border-black px-3 py-2"
                 >
-                  <option values="disabled">Please select</option>
+                  <option values="" disabled>
+                    Please select
+                  </option>
                   <option values="male">Male</option>
                   <option values="female">Female</option>
                 </Field>
                 <p className="text-red-600">
-                  <ErrorMessage name="Select you gender first" />
+                  <ErrorMessage name="gender" />
                 </p>
                 <button
                   className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
