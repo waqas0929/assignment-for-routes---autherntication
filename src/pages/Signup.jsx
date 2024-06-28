@@ -7,6 +7,7 @@ const SignupFormValidation = () => {
     email: "",
     password: "",
     gender: "",
+    termAndCondition: false,
   };
 
   const validationSchema = yup.object().shape({
@@ -17,6 +18,9 @@ const SignupFormValidation = () => {
       .email("enter a valid email"),
     password: yup.string().required("Please enter you password"),
     gender: yup.string().required("Please select you gender"),
+    termAndCondition: yup
+      .boolean()
+      .oneOf([true], "Please accept term and condition"),
   });
 
   const handleSubmit = (values) => {
@@ -46,7 +50,6 @@ const SignupFormValidation = () => {
                 <p className="text-red-600">
                   <ErrorMessage name="name" />
                 </p>
-
                 <Field
                   type="email"
                   name="email"
@@ -56,7 +59,6 @@ const SignupFormValidation = () => {
                 <p className="text-red-600">
                   <ErrorMessage name="email" />
                 </p>
-
                 <Field
                   type="password"
                   name="password"
@@ -80,6 +82,16 @@ const SignupFormValidation = () => {
                 </Field>
                 <p className="text-red-600">
                   <ErrorMessage name="gender" />
+                </p>
+                <label className="flex items-center space-x-2">
+                  <Field type="checkbox" name="termAndCondition"></Field>I
+                  <span>I accept the terms and conditions</span>
+                </label>
+                <p className="text-red-600">
+                  <ErrorMessage
+                    name="termAndCondition"
+                    className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                  />
                 </p>
                 <button
                   className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
