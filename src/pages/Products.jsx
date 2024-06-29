@@ -38,7 +38,7 @@ const Product = () => {
         placeholder="Search"
         value={searchString}
         onChange={(e) => setSearchString(e.target.value)}
-        className="mb-4 w-full rounded-md border p-2 shadow-sm focus:border-blue-500 focus:outline-none"
+        className="mb-4 w-auto rounded-md border p-2 shadow-sm focus:border-blue-500 focus:outline-none"
       />
       <ul className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
         {searchProducts.map((product) => (

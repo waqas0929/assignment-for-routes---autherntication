@@ -1,7 +1,7 @@
 import { Field, Form, Formik, ErrorMessage } from "formik";
 import * as yup from "yup";
 
-const SignupFormValidation = () => {
+const Signup = () => {
   const initialValues = {
     name: "",
     email: "",
@@ -108,4 +108,4 @@ const SignupFormValidation = () => {
   );
 };
 
-export default SignupFormValidation;
+export default Signup;
